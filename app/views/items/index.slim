@@ -1,14 +1,18 @@
 h2 All items
 
-= link_to 'Add New', new_item_path
-
-br
+p
+  = link_to 'Add New', new_item_path, class: "btn btn-primary"
+p
+  = link_to 'Scrape', scrape_path, class: "btn btn-default"
 
 - @items.each do |item|
   div.col-xs-4
     .panel.panel-default
       .panel-heading
         h4 #{item.title}
-        p #{item.link}
+        a href="#{item.link}" #{item.link}
       .panel-body
-        p render content here
+        p #{item.result}
+      .panel-footer
+        = link_to 'Edit', edit_item_path(item), class: "btn btn-xs btn-primary"
+        = link_to 'Delete', item_path(item), method: :delete, class: "btn btn-xs btn-danger pull-right"
