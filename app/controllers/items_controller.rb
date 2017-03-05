@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
     else
       render 'new'
     end
-    
+
   end
 
   def edit
@@ -29,6 +29,10 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def scrape
+    
   end
 
   private

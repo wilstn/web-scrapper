@@ -26,6 +26,24 @@ RSpec.describe ItemsController, type: :controller do
 
   describe 'GET edit' do
     it "gets item to edit" do
+
+    end
+  end
+
+  describe 'POST edit' do
+    it "updates the edited item" do
+
+    end
+  end
+
+  describe 'DESTROY' do
+    it "deletes the item" do
+
+    end
+  end
+
+  describe 'scrape' do
+    it "scrapes and displays the data" do
       
     end
   end
