@@ -2,7 +2,13 @@ h2 All items
 
 = link_to 'Add New', new_item_path
 
+br
+
 - @items.each do |item|
-  = item.link
-  = item.selector
-  = item.extra
+  div.col-xs-4
+    .panel.panel-default
+      .panel-heading
+        h4 #{item.title}
+        p #{item.link}
+      .panel-body
+        p render content here

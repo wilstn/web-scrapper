@@ -24,4 +24,10 @@ RSpec.describe ItemsController, type: :controller do
     end
   end
 
+  describe 'GET edit' do
+    it "gets item to edit" do
+      
+    end
+  end
+
 end
