@@ -18,6 +18,10 @@ RSpec.describe ItemsController, type: :controller do
     end
   end
 
-
+  describe 'POST create' do
+    it 'creates and save a new item' do
+      expect{Item.create}.to change{Item.count}.by(1)
+    end
+  end
 
 end
