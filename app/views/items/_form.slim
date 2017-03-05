@@ -1,0 +1,14 @@
+= form_for @item do |f|
+  p
+    = f.label :link
+    = f.text_field :link
+  p
+    = f.label :selector
+    = f.text_field :selector
+  p
+    = f.label :extra
+    = f.text_area :extra
+  p
+    = f.submit 'Save'
+    
+= link_to 'Back', items_path

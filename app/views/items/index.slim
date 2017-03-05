@@ -1,1 +1,8 @@
-h1 Hello world
+h2 All items
+
+= link_to 'Add New', new_item_path
+
+- @items.each do |item|
+  = item.link
+  = item.selector
+  = item.extra

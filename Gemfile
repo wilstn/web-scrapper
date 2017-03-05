@@ -35,7 +35,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem "slim"
+gem 'slim'
+gem 'bootstrap-sass'
 gem 'nokogiri'
 gem 'mechanize'
 gem 'rails-controller-testing'
