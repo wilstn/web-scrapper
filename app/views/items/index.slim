@@ -12,7 +12,7 @@ p
         h4 #{item.title}
         a href="#{item.link}" #{item.link}
       .panel-body
-        p #{item.result}
+        p #{item.result.html_safe}
       .panel-footer
         = link_to 'Edit', edit_item_path(item), class: "btn btn-xs btn-primary"
         = link_to 'Delete', item_path(item), method: :delete, class: "btn btn-xs btn-danger pull-right"

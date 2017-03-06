@@ -51,7 +51,16 @@ class ItemsController < ApplicationController
 
     @items.each do |item|
       doc = Nokogiri::HTML(open(item.link, 'User-Agent' => user_agent))
-      item.result = doc.css(item.selector).text
+
+      preprocess = doc.css(item.selector)
+
+      to_be_saved = "<ol>"
+      preprocess.each do |something|
+        to_be_saved += "<li>#{something.text}</li>"
+      end
+      to_be_saved += "</ol>"
+
+      item.result = to_be_saved
 
       item.save
     end
