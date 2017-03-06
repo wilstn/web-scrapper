@@ -42,8 +42,8 @@ RSpec.describe ItemsController, type: :controller do
 
   describe 'DESTROY' do
     it "deletes the item" do
-      delete :destroy, params: { id: 1 }
-      expect(response).to have_http_status(:success)
+      @item = Item.create
+      expect{@item.destroy}.to change{Item.count}.by(-1)
     end
   end
 
