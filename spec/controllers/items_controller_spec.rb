@@ -26,14 +26,16 @@ RSpec.describe ItemsController, type: :controller do
 
   describe 'GET edit' do
     it "gets item to edit" do
-      get :edit, params: { id: 1 }
+      @item = Item.create(title: "something")
+      get :edit, id: @item
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe 'POST edit' do
+  describe 'POST update' do
     it "updates the edited item" do
-      put :update, params: { id: 1, title: "Something" }
+      @item = Item.create(title: "something")
+      @item.update(title: "something else")
       expect(response).to have_http_status(:success)
     end
   end
