@@ -26,25 +26,28 @@ RSpec.describe ItemsController, type: :controller do
 
   describe 'GET edit' do
     it "gets item to edit" do
-
+      get :edit, params: { id: 1 }
+      expect(response).to have_http_status(:success)
     end
   end
 
   describe 'POST edit' do
     it "updates the edited item" do
-
+      put :update, params: { id: 1, title: "Something" }
+      expect(response).to have_http_status(:success)
     end
   end
 
   describe 'DESTROY' do
     it "deletes the item" do
-
+      delete :destroy, params: { id: 1 }
+      expect(response).to have_http_status(:success)
     end
   end
 
   describe 'scrape' do
     it "scrapes and displays the data" do
-      
+
     end
   end
 
