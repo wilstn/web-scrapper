@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
   def scrape
     @items = Item.all
 
-    user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.854.0 Safari/535.2"
+    user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:53.0) Gecko/20100101 Firefox/53.0"
 
     @items.each do |item|
       doc = Nokogiri::HTML(open(item.link, 'User-Agent' => user_agent))
