@@ -27,7 +27,7 @@ RSpec.describe ItemsController, type: :controller do
   describe 'GET edit' do
     it "gets item to edit" do
       @item = Item.create(title: "something")
-      get :edit, id: @item
+      get :edit, params: { id: @item.id }
       expect(response).to have_http_status(:success)
     end
   end
@@ -35,8 +35,8 @@ RSpec.describe ItemsController, type: :controller do
   describe 'POST update' do
     it "updates the edited item" do
       @item = Item.create(title: "something")
-      @item.update(title: "something else")
-      expect(response).to have_http_status(:success)
+      put :update, params: { id: @item.id, item: {title: "something else"} }
+      expect(response).to have_http_status(:redirect)
     end
   end
 
