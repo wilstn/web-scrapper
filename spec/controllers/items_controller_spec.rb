@@ -48,7 +48,7 @@ RSpec.describe ItemsController, type: :controller do
   end
 
   describe 'scrape' do
-    it "scrapes and displays the data" do
+    it "takes all items and scape method on individual item" do
 
     end
   end

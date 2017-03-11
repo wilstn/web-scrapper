@@ -10,7 +10,14 @@ class Item < ApplicationRecord
     to_be_saved = "<ol>"
 
     selected_object.each do |row|
-      to_be_saved += "<li>#{row.text}</li>"
+      # to_be_saved += "<li>#{row.text}</li>"
+      if self.extra == "uniqlo"
+        to_be_saved += "<li><p>#{row.css('div:nth-child(3) > h2 > a').text}</p>"
+        to_be_saved += "<p>#{row.css('div:nth-child(3) > div:nth-child(2) > p:nth-child(2) > span:nth-child(1)').text}</p></li>"
+        to_be_saved += "<img src=#{row.css('img').attr('data-original').text}>"
+      else
+        to_be_saved += "<li>#{row.text}</li>"
+      end
     end
 
     to_be_saved += "</ol>"

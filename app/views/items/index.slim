@@ -11,8 +11,10 @@ p
       .panel-heading
         h4 #{item.title}
         a href="#{item.link}" #{item.link}
+        p Last scrape #{time_ago_in_words(item.updated_at)} ago
       .panel-body
-        p #{item.result.html_safe}
+        - if not item.result.nil?
+          p = item.result.html_safe
       .panel-footer
         = link_to 'Edit', edit_item_path(item), class: "btn btn-xs btn-primary"
         = link_to 'Delete', item_path(item), method: :delete, class: "btn btn-xs btn-danger pull-right"
